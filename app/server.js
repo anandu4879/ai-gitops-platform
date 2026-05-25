@@ -5,7 +5,7 @@ const app = express();
 let crashMode = false;
 
 app.get("/", (req, res) => {
-    res.send("Version 2 Running");
+    res.send("Version 3 Running");
 });
 
 app.get("/health", (req, res) => {
@@ -24,3 +24,9 @@ app.get("/crash", (req, res) => {
 app.listen(3000, () => {
     console.log("Server started on port 3000");
 });
+
+let memoryLeak = [];
+
+setInterval(() => {
+    memoryLeak.push(new Array(1000000).fill("*"));
+}, 1000);
