@@ -4,7 +4,7 @@ metadata:
   name: ai-gitops-app
 
 spec:
-  replicas: 4
+  replicas: 6
 
   selector:
     matchLabels:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ai-gitops-app:v2
+          image: ai-gitops-app:v3
           imagePullPolicy: Never
 
           ports:
